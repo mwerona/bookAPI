@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Please sign in</title>
+<link rel="stylesheet" href="style.css" />
+<script type="text/javascript">
+	function flip() {
+		document.querySelector("#flipper").classList.toggle("flip");
+	}
+</script>
+</head>
+<body>
+	<div class="flipContainer">
+		<div class="mainContainer" id="flipper">
+			<div class="loginPage">
+				<h1 class="title">Login</h1>
+				<form autocomplete="off" modelAttribute="user" action="signIn">
+					<input type="text" name="userId" path="${user.userId}"/> 
+					<input type="password" name="password" path="${user.password}"/> 
+					<input type="submit" value="Login"/>
+				</form>
+				<a class="flipbutton" id="loginButton" onclick="flip();">Create
+					my account →</a>
+			</div>
+			<div class="registerPage">
+				<h1 class="title">Register</h1>
+				<form autocomplete="off" modelAttribute="user" action="register">
+					<input type="text" name="userId" path="${user.userId}"/> 
+					<input type="password" name="password" path="${user.password}"/>
+					<input type="submit" value="Register"/>
+				</form>
+				<a class="flipbutton" id="registerButton" onclick="flip();">Login
+					to my account →</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

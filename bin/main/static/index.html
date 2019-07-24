@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Search book</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://kit.fontawesome.com/ce03205d0d.js"></script>
+<script type="text/javascript" src="book.js"></script>
+</head>
+<body onload="init();">
+	<div class="mainContainer" id="popupSearch">
+		<div class="searchPage">
+			<div class="history">
+				<i class="fas fa-history fa-lg" onclick="flip();"></i>
+			</div>
+			<h1 class="title">Search Book</h1>
+			<form name="doSearch" action="search">
+				<select id="target" name="target">
+					<option value="">전체검색</option>
+					<option value="title">제목</option>
+					<option value="isbn">ISBN</option>
+					<option value="publisher">출판사</option>
+					<option value="person">인명</option>
+				</select> <input type="text" class="input" id="keyword" name="keyword"></input>
+				<i class="fas fa-search fa-lg" onclick="search();"></i>
+			</form>
+
+			<h1 class="title" id="result">Hot keyword</h1>
+			<div class="resultDiv" id="keywordDiv">
+				<table id="keywordTable">
+				</table>
+			</div>
+
+		</div>
+		<div class="history historyPage">
+			<i class="fas fa-times fa-lg" onclick="flip();"></i>
+			<h1 class="title">Search History</h1>
+			<div class="resultDiv" id="historyDiv">
+				<table id="historyTable">
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="mainContainer" id="popupResult">
+		<i class="fas fa-times fa-lg" onclick="closeResult();"></i>
+		<h1 class="title">Book Information</h1>
+		<div id="pagination">
+			Page : <input type="text" class="input" id="page" name="page"></input>
+			<a id="maxpage"></a>
+			<i class="fas fa-search" onclick="goPage();"></i>
+		</div>
+		<div class="resultDiv" id="searchDiv">
+			<table id="searchTable">
+			</table>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+input {
+	width: 100%;
+	margin-bottom: 15px;
+	height: 40px;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.title {
+	text-align: center;
+}
+
+body, html {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #3b3b3b;
+}
+
+.mainContainer {
+	padding: 30px;
+	width: 350px;
+	height: 500px;
+	position: relative;
+	background: #fbfbfb;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+    border-radius: 20px;
+	
+	transition: 0.6s;
+	transform-style: preserve-3d;
+}
+
+.mainContainer#flipper {
+	height: 250px;
+}
+
+.flipContainer {
+	perspective: 1000;
+}
+
+.loginPage, .registerPage, .searchPage, .historyPage {
+	position: absolute;
+	padding: 10px 30px;
+	top: 0;
+	left: 0;
+	right: 0;
+	backface-visibility: hidden;
+}
+
+.loginPage, .searchPage {
+	z-index: 2; /* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+.registerPage, .historyPage {
+	transform: rotateY(180deg);
+}
+
+.flip {
+	transform: rotateY(179deg);
+}
+
+.flipbutton {
+	text-decoration: none;
+	text-align: left !important;
+}
+
+#keyword {
+	width: 90%;
+}
+
+.fas {
+	padding: 2px;
+}
+
+.history {
+    text-align: right;
+}
+
+#target {
+	margin: 2px;
+}
+
+.resultDiv {
+	height: 350px;
+    overflow: auto;
+	text-align: center;
+}
+
+#keywordTable {
+	width: 100%;
+}
+
+#page {
+	width: 20%;
+}
+
+#popupResult {
+    text-align: right;
+	display:none;
+	width: 1000px;
+}
+
+td {
+	max-width: 90px;
+	max-height: 30px;
+    overflow: auto;
+}
